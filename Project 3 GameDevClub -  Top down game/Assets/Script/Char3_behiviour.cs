@@ -1,8 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class CowboyBeheviour : MonoBehaviour
+public class Char3_behiviour : MonoBehaviour
 {
     Animator anim;
     Rigidbody2D rigit;
@@ -20,18 +18,8 @@ public class CowboyBeheviour : MonoBehaviour
         ver = Input.GetAxisRaw("Vertical");
         anim.SetBool("isMoving", hor != 0 || ver != 0);
         if (hor != 0 || ver != 0) Moving();
-        if (Input.GetKeyDown(KeyCode.Mouse0)) anim.SetTrigger("attack1");
+    }
 
-    }
-    private void FixedUpdate()
-    {
-        /*
-        if (hor != 0 || ver != 0)
-        {
-          
-        }
-        */
-    }
     void Moving()
     {
         anim.SetFloat("dirX", hor);
